@@ -10,10 +10,10 @@ interface TweetsyAPI {
 
     //for Dynamic Headers
     @GET("/v3/b/656db0ff0574da7622d00067?meta=false")
-    suspend fun getTweets(@Header("X-JSON-Path")category:String): Response<List<Tweet>>
+    suspend fun getTweets(@Header("X-JSON-Path") category:String): Response<List<Tweet>>
 
     //For Static Headers
     @GET("/v3/b/656db0ff0574da7622d00067?meta=false")
-    @Headers("X-JSON-Path : tweets..category")
-    suspend fun getCategories() : Response<String>
+    @Headers("X-JSON-Path: tweets..category")
+    suspend fun getCategories() : Response<List<String>>
 }
