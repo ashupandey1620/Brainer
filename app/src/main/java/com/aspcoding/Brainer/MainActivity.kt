@@ -22,16 +22,10 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    @Inject
-    lateinit var tweetsyAPI: TweetsyAPI
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        GlobalScope.launch {
-           var response =  tweetsyAPI.getCategories()
-            Log.d("KODANKING", response.body() !!.distinct().toString())
-
-        }
 
 
         setContent {
