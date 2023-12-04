@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
 
         GlobalScope.launch {
            var response =  tweetsyAPI.getCategories()
-            Log.d("KODANKING",response.body().toString())
+            Log.d("KODANKING", response.body() !!.distinct().toString())
 
         }
 
