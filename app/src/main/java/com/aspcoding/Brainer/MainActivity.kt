@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.aspcoding.Brainer.api.TweetsyAPI
 import com.aspcoding.Brainer.ui.theme.BrainerTheme
+import com.aspcoding.screens.CategoryScreen
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -32,29 +33,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             BrainerTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize() ,
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
+              CategoryScreen()
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String , modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!" ,
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    BrainerTheme {
-        Greeting("Android")
-    }
-}
